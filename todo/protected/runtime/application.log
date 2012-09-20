@@ -1,0 +1,842 @@
+2012/09/18 14:17:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000]: Syntax error or access violation: 1115 Unknown character set: 'utf8_swedish_ci'' in D:\xampp\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\xampp\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 D:\xampp\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 D:\xampp\framework\base\CModule.php(388): CDbConnection->init()
+#3 D:\xampp\framework\base\CModule.php(104): CModule->getComponent('db')
+#4 D:\xampp\framework\gii\generators\model\ModelCode.php(54): CModule->__get('db')
+#5 D:\xampp\framework\web\CFormModel.php(40): ModelCode->init()
+#6 D:\xampp\framework\gii\CCodeGenerator.php(152): CFormModel->__construct()
+#7 D:\xampp\framework\gii\CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 D:\xampp\framework\web\actions\CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\xampp\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\framework\web\CWebApplication.php(276): CController->run('')
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('gii/model')
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/todo/index.php/gii/model
+HTTP_REFERER=http://localhost/todo/index.php/gii/default/index
+---
+2012/09/18 14:34:58 [error] [exception.CException] exception 'CException' with message 'UserController cannot find the requested view "index".' in D:\xampp\framework\web\CController.php:879
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#1 D:\xampp\htdocs\todo\protected\controllers\UserController.php(133): CController->render('index', Array)
+#2 D:\xampp\framework\web\actions\CInlineAction.php(50): UserController->actionIndex()
+#3 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\framework\web\CWebApplication.php(276): CController->run('')
+#12 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('user')
+#13 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/todo/index.php/user
+HTTP_REFERER=http://localhost/todo/index.php/gii/crud
+---
+2012/09/18 15:30:48 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `tbl_todo` `t` WHERE user_id=:id LIMIT 1.
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (136)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/18 15:30:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `tbl_todo` `t` WHERE user_id=:id LIMIT 1' in D:\xampp\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\xampp\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 D:\xampp\framework\db\ar\CActiveRecord.php(1392): CActiveRecord->query(Object(CDbCriteria))
+#3 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(136): CActiveRecord->find(Array)
+#4 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#5 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#12 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\framework\web\CWebApplication.php(276): CController->run('index')
+#14 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/index')
+#15 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/todo/index.php/todo/index
+---
+2012/09/18 15:36:44 [error] [php] reset() expects parameter 1 to be array, string given (D:\xampp\framework\db\schema\CDbCriteria.php:248)
+Stack trace:
+#0 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#1 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#3 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#5 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#6 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#9 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#10 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (134)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/18 15:38:48 [error] [php] Undefined variable: model (D:\xampp\htdocs\todo\protected\views\todo\view.php:4)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(148): TodoController->render()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#12 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\view.php (4)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (148)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/18 15:40:46 [error] [php] Undefined variable: model (D:\xampp\htdocs\todo\protected\views\todo\view.php:4)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(148): TodoController->render()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#12 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\view.php (4)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (148)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/18 15:40:58 [error] [php] Undefined variable: model (D:\xampp\htdocs\todo\protected\views\todo\view.php:16)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(148): TodoController->render()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#12 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\view.php (16)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (148)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/18 15:43:40 [error] [php] Undefined variable: model (D:\xampp\htdocs\todo\protected\views\todo\view.php:4)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(148): TodoController->render()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#12 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\view.php (4)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (148)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/18 15:53:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`todo`.`tbl_todo`, CONSTRAINT `tbl_todo_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_todo` (`done`, `description`, `user_id`) VALUES (:yp0, :yp1, :yp2).
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (82)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/18 15:53:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`todo`.`tbl_todo`, CONSTRAINT `tbl_todo_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_todo` (`done`, `description`, `user_id`) VALUES (:yp0, :yp1, :yp2)' in D:\xampp\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\xampp\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\xampp\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(82): CActiveRecord->save()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionCreate()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\framework\web\CWebApplication.php(276): CController->run('create')
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/create')
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/todo/index.php/todo/create
+HTTP_REFERER=http://localhost/todo/index.php/todo/create
+---
+2012/09/19 14:38:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajaxSetDone".' in D:\xampp\framework\web\CController.php:484
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(271): CController->missingAction('ajaxSetDone')
+#1 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#2 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#3 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348058320879
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 14:38:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajaxSetDone".' in D:\xampp\framework\web\CController.php:484
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(271): CController->missingAction('ajaxSetDone')
+#1 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#2 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#3 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348058322436
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 14:38:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajaxSetDone".' in D:\xampp\framework\web\CController.php:484
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(271): CController->missingAction('ajaxSetDone')
+#1 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#2 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#3 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348058325629
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 14:39:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajaxSetDone".' in D:\xampp\framework\web\CController.php:484
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(271): CController->missingAction('ajaxSetDone')
+#1 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#2 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#3 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone?_=1348058361612
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 14:53:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajaxSetDone".' in D:\xampp\framework\web\CController.php:484
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(271): CController->missingAction('ajaxSetDone')
+#1 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#2 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#3 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348059207745
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 14:53:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajaxSetDone".' in D:\xampp\framework\web\CController.php:484
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(271): CController->missingAction('ajaxSetDone')
+#1 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#2 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#3 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348059210015
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 15:02:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348059723629
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 15:02:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348059725307
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 15:02:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348059765696
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 15:02:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348059768062
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/19 15:18:05 [error] [exception.CException] exception 'CException' with message 'TodoController cannot find the requested view "_ajaxContent".' in D:\xampp\framework\web\CController.php:879
+Stack trace:
+#0 D:\xampp\htdocs\todo\protected\views\todo\index.php(15): CController->renderPartial('_ajaxContent', Array)
+#1 D:\xampp\framework\web\CBaseController.php(127): require('D:\xampp\htdocs...')
+#2 D:\xampp\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#3 D:\xampp\framework\web\CController.php(870): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#4 D:\xampp\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#5 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(188): CController->render('index', Array)
+#6 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#7 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#14 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\xampp\framework\web\CWebApplication.php(276): CController->run('index')
+#16 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/index')
+#17 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/todo/index.php/todo/index
+---
+2012/09/19 15:18:34 [error] [php] Undefined variable: model (D:\xampp\htdocs\todo\protected\views\todo\view.php:4)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(188): TodoController->render()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#12 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\view.php (4)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (188)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/19 15:18:56 [error] [php] Undefined variable: model (D:\xampp\htdocs\todo\protected\views\todo\view.php:16)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(188): TodoController->render()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#12 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\view.php (16)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (188)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/19 15:20:18 [error] [php] Undefined variable: data (D:\xampp\htdocs\todo\protected\views\todo\_view.php:3)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\htdocs\todo\protected\views\todo\index.php(15): TodoController->renderPartial()
+#2 D:\xampp\framework\web\CBaseController.php(127): require()
+#3 D:\xampp\framework\web\CBaseController.php(96): TodoController->renderInternal()
+#4 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#5 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#6 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(183): TodoController->render()
+#7 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#8 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#10 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#12 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#13 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#16 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#17 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#18 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\_view.php (3)
+in D:\xampp\htdocs\todo\protected\views\todo\index.php (15)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (183)
+2012/09/19 15:20:34 [error] [php] Undefined variable: data (D:\xampp\htdocs\todo\protected\views\todo\index.php:19)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(183): TodoController->render()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#12 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/index
+in D:\xampp\htdocs\todo\protected\views\todo\index.php (19)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (183)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/19 15:21:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348060877159
+HTTP_REFERER=http://localhost/todo/index.php/todo/
+---
+2012/09/19 15:25:20 [error] [exception.CException] exception 'CException' with message 'Todo and its behaviors do not have a method or closure named "getData".' in D:\xampp\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\xampp\framework\db\ar\CActiveRecord.php(226): CComponent->__call('getData', Array)
+#1 D:\xampp\framework\zii\widgets\CBaseListView.php(105): CActiveRecord->__call('getData', Array)
+#2 D:\xampp\framework\zii\widgets\CBaseListView.php(105): Todo->getData()
+#3 D:\xampp\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#4 D:\xampp\framework\web\CBaseController.php(148): CListView->init()
+#5 D:\xampp\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#6 D:\xampp\htdocs\todo\protected\views\todo\index.php(17): CBaseController->widget('zii.widgets.CLi...', Array)
+#7 D:\xampp\framework\web\CBaseController.php(127): require('D:\xampp\htdocs...')
+#8 D:\xampp\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#9 D:\xampp\framework\web\CController.php(870): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#10 D:\xampp\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#11 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(183): CController->render('index', Array)
+#12 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#13 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#20 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 D:\xampp\framework\web\CWebApplication.php(276): CController->run('')
+#22 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo')
+#23 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/todo/index.php/todo/
+---
+2012/09/19 15:42:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348062146416
+HTTP_REFERER=http://localhost/todo/index.php/todo/
+---
+2012/09/19 15:42:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2&_=1348062147742
+HTTP_REFERER=http://localhost/todo/index.php/todo/
+---
+2012/09/20 09:51:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 09:54:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 09:55:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ajaxSetDone".' in D:\xampp\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('ajaxSetDone')
+#1 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/todo/index.php/ajaxSetDone/?id=2
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 09:57:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ajaxSetDone".' in D:\xampp\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('ajaxSetDone')
+#1 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/todo/index.php/ajaxSetDone/?id=2
+---
+2012/09/20 09:57:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ajaxSetDone".' in D:\xampp\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('ajaxSetDone')
+#1 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/todo/index.php/ajaxSetDone/?id=2
+---
+2012/09/20 09:57:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ajaxsetdone".' in D:\xampp\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('ajaxsetdone')
+#1 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/todo/index.php/ajaxsetdone/?id=2
+---
+2012/09/20 09:59:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ajaxSetDone".' in D:\xampp\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('ajaxSetDone')
+#1 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/todo/index.php/ajaxSetDone/?id=2
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 09:59:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('ajaxSetDone')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/ajaxSetDon...')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/ajaxSetDone/?id=2
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 10:16:06 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\todo\protected\views\todo\view.php:4)
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(870): TodoController->renderFile()
+#1 D:\xampp\framework\web\CController.php(783): TodoController->renderPartial()
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(62): TodoController->render()
+#3 unknown(0): TodoController->actionView()
+#4 D:\xampp\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 D:\xampp\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams()
+#7 D:\xampp\framework\web\filters\CFilterChain.php(134): TodoController->runAction()
+#8 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#10 D:\xampp\framework\web\filters\CInlineFilter.php(59): TodoController->filterAccessControl()
+#11 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#13 D:\xampp\framework\web\CController.php(266): TodoController->runActionWithFilters()
+#14 D:\xampp\framework\web\CWebApplication.php(276): TodoController->run()
+#15 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#16 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\xampp\htdocs\todo\index.php(13): CWebApplication->run()
+REQUEST_URI=/todo/index.php/todo/2
+in D:\xampp\htdocs\todo\protected\views\todo\view.php (4)
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (62)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/20 10:18:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/admin')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/admin
+HTTP_REFERER=http://localhost/todo/index.php/todo/create
+---
+2012/09/20 10:23:11 [error] [exception.CException] exception 'CException' with message 'The "dataProvider" property cannot be empty.' in D:\xampp\framework\zii\widgets\CBaseListView.php:103
+Stack trace:
+#0 D:\xampp\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#1 D:\xampp\framework\web\CBaseController.php(148): CListView->init()
+#2 D:\xampp\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 D:\xampp\htdocs\todo\protected\views\todo\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 D:\xampp\framework\web\CBaseController.php(127): require('D:\xampp\htdocs...')
+#5 D:\xampp\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#6 D:\xampp\framework\web\CController.php(870): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#7 D:\xampp\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(184): CController->render('index', Array)
+#9 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#10 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\xampp\framework\web\CWebApplication.php(276): CController->run('index')
+#19 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/index')
+#20 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/todo/index.php/todo/index
+---
+2012/09/20 10:23:55 [error] [exception.CException] exception 'CException' with message 'Todo and its behaviors do not have a method or closure named "getData".' in D:\xampp\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\xampp\framework\db\ar\CActiveRecord.php(226): CComponent->__call('getData', Array)
+#1 D:\xampp\framework\zii\widgets\CBaseListView.php(105): CActiveRecord->__call('getData', Array)
+#2 D:\xampp\framework\zii\widgets\CBaseListView.php(105): Todo->getData()
+#3 D:\xampp\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#4 D:\xampp\framework\web\CBaseController.php(148): CListView->init()
+#5 D:\xampp\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#6 D:\xampp\htdocs\todo\protected\views\todo\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#7 D:\xampp\framework\web\CBaseController.php(127): require('D:\xampp\htdocs...')
+#8 D:\xampp\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#9 D:\xampp\framework\web\CController.php(870): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#10 D:\xampp\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#11 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(184): CController->render('index', Array)
+#12 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionIndex()
+#13 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#20 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 D:\xampp\framework\web\CWebApplication.php(276): CController->run('index')
+#22 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/index')
+#23 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/todo/index.php/todo/index
+---
+2012/09/20 10:50:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/admin')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/admin
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 10:57:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('delete')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/delete')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/delete/1
+HTTP_REFERER=http://localhost/todo/index.php/todo/1
+---
+2012/09/20 11:05:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/admin')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/admin
+HTTP_REFERER=http://localhost/todo/index.php/todo/2
+---
+2012/09/20 11:05:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/admin')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/admin
+HTTP_REFERER=http://localhost/todo/index.php/todo/create
+---
+2012/09/20 12:31:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 D:\xampp\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/admin')
+#9 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/todo/index.php/todo/admin
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 12:40:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "2012-09-20".' in D:\xampp\framework\web\CController.php:484
+Stack trace:
+#0 D:\xampp\framework\web\CController.php(271): CController->missingAction('2012-09-20')
+#1 D:\xampp\framework\web\CWebApplication.php(276): CController->run('2012-09-20')
+#2 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/2012-09-20')
+#3 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/todo/index.php/todo/2012-09-20
+HTTP_REFERER=http://localhost/todo/index.php/todo/index
+---
+2012/09/20 14:29:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`todo`.`tbl_todo`, CONSTRAINT `tbl_todo_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_todo` (`done`, `description`, `user_id`) VALUES (:yp0, :yp1, :yp2).
+in D:\xampp\htdocs\todo\protected\controllers\TodoController.php (102)
+in D:\xampp\htdocs\todo\index.php (13)
+2012/09/20 14:29:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`todo`.`tbl_todo`, CONSTRAINT `tbl_todo_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_todo` (`done`, `description`, `user_id`) VALUES (:yp0, :yp1, :yp2)' in D:\xampp\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\xampp\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\xampp\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\xampp\htdocs\todo\protected\controllers\TodoController.php(102): CActiveRecord->save()
+#3 D:\xampp\framework\web\actions\CInlineAction.php(50): TodoController->actionCreate()
+#4 D:\xampp\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\xampp\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\xampp\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\framework\web\CWebApplication.php(276): CController->run('create')
+#13 D:\xampp\framework\web\CWebApplication.php(135): CWebApplication->runController('todo/create')
+#14 D:\xampp\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\todo\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/todo/index.php/todo/create
+HTTP_REFERER=http://localhost/todo/index.php/todo/create
+---

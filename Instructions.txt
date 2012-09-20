@@ -1,0 +1,17 @@
+Instructions for install: 
+
+Install latest yii framework (name it as framework). 
+for instance if you are using xampp. 
+
+./framework
+
+./htdocs/todo
+
+See the database access and other configs at: /protected/config/main.php
+
+(if needed you can adjust settings also at: index.php in root folder of todo)
+
+Uses mysql as the database. set up the database as: todo. 
+
+Developed using eclipse (zend)
+
