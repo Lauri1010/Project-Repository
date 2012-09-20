@@ -11,7 +11,8 @@ See the database access and other configs at: /protected/config/main.php
 
 (if needed you can adjust settings also at: index.php in root folder of todo)
 
-Uses mysql as the database. set up the database as: todo. 
+Uses mysql as the database. set up the database as: todo.   
+You can ofcourse create other user than root to access the database if running it on hosting. 
 
 Developed using eclipse (zend)
 
